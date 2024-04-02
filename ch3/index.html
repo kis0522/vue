@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vue Component Registration</title>
+</head>
+<body>
+  <div id="app">
+    {{message}}
+  </div>
+  <script src="../js/vue.js"></script>
+  <script>
+    new Vue({ //인스턴스 객체
+      el: '#app', //el 속성 : 생성한 인스턴스를 화면(아이디 app, #app)에 붙이는 역할
+      data: { //data 속성
+        message: 'Hello Vue.js!'
+      },
+      beforeCreate: function() {
+        console.log("beforeCreate");
+      },
+      created: function() {
+        console.log("created");
+      },
+      mounted: function() {
+        console.log("mounted");
+        this.message = 'Hello insu!'
+      },
+      updated: function() {
+        console.log("updated");
+      }
+    });
+  </script>
+</body>
+</html>
