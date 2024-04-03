@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>상위에서 하위 컴포넌트로 데이터 전달하기</title>
+</head>
+<body>
+  <div id="app">
+    <child1 v-bind:propsdata="message"></child1>
+  </div>
+  <script src="../../js/vue.js"></script>
+  <script>
+    Vue.component('child1',{
+      props:['propsdata'],
+      template:'<p>{{propsdata}}</p>'
+    });
+    new Vue({
+      el: '#app',
+      data:{
+        message: 'hello'
+      }
+    });
+  </script>
+</body>
+</html>
