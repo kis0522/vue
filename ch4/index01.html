@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue Router Sample</title>
+</head>
+<body>
+    <div id="app">
+        <h1>뷰 라우터 예제</h1>
+        <p>
+            <!-- 아랫 부분이 a태그에 해당하는 부분-->
+            <router-link to="/main">Main 컴포넌트로 이동</router-link>
+            <router-link to="/login">Login 컴포넌트로 이동</router-link>
+        </p>
+        <!-- 화면이 보여질 영역 -->
+        <router-view></router-view>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script src="../js/vue-router.js"></script>
+    <script>
+        var Main = {template: '<div>main</div>'};
+        var Login = {template: '<div>login</div>'};
+        var routes = [
+            {path: '/main', component: Main},
+            {path: '/login', component: Login}
+        ];
+        var router = new VueRouter({
+			//mode: 'history' = root가 설정된 서버에서 작동 됨
+            //mode: 'history', 
+            routes
+        });
+        var app = new Vue({
+            router
+        }).$mount('#app');
+    </script>
+</body>
+</html>

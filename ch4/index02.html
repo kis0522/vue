@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue Router Sample</title>
+</head>
+<body>
+    <div id="app">
+        <!-- 화면이 보여질 영역 -->
+        <router-view></router-view>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script src="../js/vue-router.js"></script>
+    <script>
+        var User = {
+			template:
+			// 줄 바꿀때 ~부분에 있는 ``를 사용한다.
+			//그레이브 : grave 탭과 개행을 인식하는 특징, 특정변수 삽입 용도
+			`<div>
+				User Component
+				<router-view></router-view>
+			</div>`
+		};
+		var UserProfile = {template: '<p>User Profile Component</p>'};
+		var UserPost = {template: '<p>User Post Component</p>'};
+        var routes = [
+            {
+				path: '/user', component: User,
+				children:[
+					{
+						path:'posts',
+						component: UserPost
+					},
+					{
+						path:'Profile',
+						component: UserProfile
+					},
+				]
+			}
+        ];
+		//file:///D:/JavaProgramming/vue_source/ch4/index02.html#/ == 실행후 user 추가하기(file:///D:/JavaProgramming/vue_source/ch4/index02.html#/user)
+        var router = new VueRouter({
+			//mode: 'history' = root가 설정된 서버에서 작동 됨
+            //mode: 'history',
+            routes
+        });
+        var app = new Vue({
+            router
+        }).$mount('#app');
+    </script>
+</body>
+</html>
