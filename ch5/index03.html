@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue Sample 3</title>
+</head>
+<body>
+    <div id="app">
+		<!-- v-once는 유일한것 -->
+		<h3 v-once>{{message}}</h3>
+		<h3>{{sayHello()}}</h3>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                message:'Hello Vue.js!'
+            },
+			methods:{
+				sayHello: function(){
+					this.message = "안녕 뷰.js"
+					return this.message
+				}
+			}
+        });
+    </script>
+</body>
+</html>

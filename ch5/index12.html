@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>디렉티브</title>
+</head>
+<body>
+    <div id="app">
+		<input v-model="message">
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+        new Vue({
+            el:'#app',
+			data:{
+					message:'Hello Vue.js!'
+			},
+			watch:{
+				message: function(data){
+					console.log("message의 값이 바뀝니다 : ", data);
+				}
+			}
+        });
+    </script>
+</body>
+</html>

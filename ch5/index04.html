@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue Sample 4</title>
+</head>
+<body>
+    <div id="app">
+		<!-- id, class, style 등을 바인딩 할 수 있다 -->
+		<p v-bind:id="idA">아이디 바인딩</p>
+		<p v-bind:class="classA">클래스 바인딩</p>
+		<p v-bind:style="styleA">스타일 바인딩</p>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                idA: 'header',
+				classA: 'container',
+				styleA: 'color:blue'
+			}
+        });
+    </script>
+</body>
+</html>

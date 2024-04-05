@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>디렉티브</title>
+</head>
+<body>
+    <div id="app">
+		<button v-on:click="clickBtn">클릭</button>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+        new Vue({
+            el:'#app',
+			methods:{
+				clickBtn: function(event){
+					console.log(event);
+				}
+			}
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Java script 표현식</title>
+</head>
+<body>
+    <div id="app">
+		<p>{{message}}</p>
+		<p>{{message+"!!!"}}</p>
+		<p>{{message.split('').reverse().join('')}}</p>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                message: 'Hello Vue.js'
+			}
+        });
+    </script>
+</body>
+</html>
